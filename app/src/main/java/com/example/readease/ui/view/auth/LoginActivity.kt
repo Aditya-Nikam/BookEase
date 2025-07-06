@@ -13,9 +13,7 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, LoginFragment())
-            .commit()
+
 
     }
 }
