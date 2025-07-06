@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.readease.R
@@ -16,6 +17,7 @@ import com.example.readease.repository.BooksRepository
 import com.example.readease.ui.adapter.BookAdapter
 import com.example.readease.ui.viewmodel.BooksViewModel
 import com.example.readease.ui.viewmodel.BooksViewModelFactory
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
 
@@ -79,12 +81,12 @@ class HomeFragment : Fragment() {
             val bundle = Bundle().apply {
                 putParcelable("book", selectedBook)
             }
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.mainFragmentContainer, ExploreFragment().apply { arguments = bundle })
-                .addToBackStack(null)
-                .commit()
+
+            // Use NavController from this Fragment's view
+            findNavController().navigate(R.id.action_homeFragment_to_exploreFragment, bundle)
         }
     }
+
 
 
     override fun onDestroyView() {

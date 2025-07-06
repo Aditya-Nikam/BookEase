@@ -46,3 +46,4 @@ class BookAdapter(
 
     override fun getItemCount(): Int = books.size
 }
+

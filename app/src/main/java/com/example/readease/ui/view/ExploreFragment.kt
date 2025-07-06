@@ -26,21 +26,23 @@ class ExploreFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        arguments?.getParcelable<Books>("book")?.let { selectedBook ->
-            book = selectedBook
+        super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentExploreBinding.bind(view)
 
-            binding.tvTitle.text = book.title
-            binding.tvAuthor.text = book.author
-            binding.tvSummary.text = book.subject
-            binding.tvOverview.text = book.description
+        val book = arguments?.getParcelable<Books>("book")
+        book?.let {
+            binding.tvTitle.text = it.title
+            binding.tvAuthor.text = it.subject
+            binding.tvOverview.text = it.category
 
+            val secureUrl = it.thumbnail.replace("http://", "https://")
             Glide.with(requireContext())
-                .load(book.thumbnail.replace("http://", "https://"))
-                .placeholder(com.example.readease.R.drawable.image)
-                .error(com.example.readease.R.drawable.image)
+                .load(secureUrl)
+                .placeholder(R.drawable.image)
                 .into(binding.ivCover)
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
