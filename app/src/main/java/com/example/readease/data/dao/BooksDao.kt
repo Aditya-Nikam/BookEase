@@ -20,4 +20,8 @@ interface BooksDao {
 
     @Query("SELECT * FROM books WHERE title LIKE :title || '%' LIMIT 10")
     suspend fun searchByTitle(title: String): List<Books>
+
+    @Query("SELECT COUNT(*) FROM books")
+    suspend fun getBookCount(): Int
+
 }
