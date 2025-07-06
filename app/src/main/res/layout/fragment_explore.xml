@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,16 +12,33 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Book Cover Image -->
-        <ImageView
-            android:layout_marginTop="20dp"
-            android:id="@+id/ivCover"
-            android:layout_width="200dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/image" />
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+
+            <!-- Book Cover Image -->
+            <ImageView
+                android:id="@+id/ivCover"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image" />
+
+            <!-- Heart Icon -->
+            <ImageButton
+                android:id="@+id/btnHeart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignTop="@id/ivCover"
+                android:layout_alignEnd="@id/ivCover"
+                android:layout_margin="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_heart_outline"
+                app:tint="#8A8A8A" />
+        </RelativeLayout>
 
         <!-- Book Title -->
         <TextView

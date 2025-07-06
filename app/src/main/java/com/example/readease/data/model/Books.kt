@@ -14,5 +14,6 @@ data class Books(
     val subject: String,
     val category: String,
     val description: String,
-    val thumbnail: String
+    val thumbnail: String,
+    val collected: Boolean = false
 ) : Parcelable

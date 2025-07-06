@@ -5,21 +5,18 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.readease.data.dao.BooksDao
-import com.example.readease.data.dao.CollectionDao
 import com.example.readease.data.dao.UserDao
 import com.example.readease.data.model.Books
-import com.example.readease.data.model.MyCollection
 import com.example.readease.data.model.User
 
 @Database(
-    entities = [User::class, Books::class, MyCollection::class],
-    version = 1,
+    entities = [User::class, Books::class],
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
     abstract fun booksDao(): BooksDao
-    abstract fun collectionDao(): CollectionDao
     companion object {
         @Volatile private var INSTANCE: AppDatabase? = null
 
@@ -29,7 +26,7 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "readease_db"
-                ).build().also { INSTANCE = it }
+                ).fallbackToDestructiveMigration().build().also { INSTANCE = it }
             }
         }
     }

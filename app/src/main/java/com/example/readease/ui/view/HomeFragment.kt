@@ -82,8 +82,11 @@ class HomeFragment : Fragment() {
                 putParcelable("book", selectedBook)
             }
 
-            // Use NavController from this Fragment's view
-            findNavController().navigate(R.id.action_homeFragment_to_exploreFragment, bundle)
+            // Navigate to ExploreFragment
+            findNavController().navigate(R.id.exploreFragment, bundle)
+
+           // Update bottom nav selection manually
+            (activity as? MainActivity)?.setSelectedBottomNavItem(R.id.exploreFragment)
         }
     }
 
