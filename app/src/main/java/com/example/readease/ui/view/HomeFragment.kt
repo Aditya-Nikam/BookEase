@@ -75,8 +75,17 @@ class HomeFragment : Fragment() {
     }
 
     private fun bindCategory(recyclerView: RecyclerView, books: List<Books>) {
-        recyclerView.adapter = BookAdapter(books)
+        recyclerView.adapter = BookAdapter(books) { selectedBook ->
+            val bundle = Bundle().apply {
+                putParcelable("book", selectedBook)
+            }
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.mainFragmentContainer, ExploreFragment().apply { arguments = bundle })
+                .addToBackStack(null)
+                .commit()
+        }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
