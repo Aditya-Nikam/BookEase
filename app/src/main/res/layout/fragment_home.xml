@@ -14,60 +14,104 @@
         android:orientation="vertical"
         android:padding="4dp">
 
-        <!-- Recommended for you -->
+        <!-- Section: Recommended -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Recommended for you"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            style="@style/SectionTitle" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:text="Handpicked based on your reading preferences."
-            android:textColor="#888888"
-            android:textSize="14sp" />
+            style="@style/SectionSubtitle" />
 
-        <!-- RecyclerView for Recommended -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerRecommended"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="24dp"
-            android:orientation="horizontal"
-            android:overScrollMode="never"
-            tools:listitem="@layout/book_item" />
+            style="@style/HorizontalRecyclerStyle" />
 
-        <!-- New Releases -->
+        <!-- Section: New Releases -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="New Releases"
-            android:textColor="#000000"
-            android:padding="4dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            style="@style/SectionTitle" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
             android:text="Newly released books spanning various genres."
-            android:textColor="#888888"
-            android:textSize="14sp" />
+            style="@style/SectionSubtitle" />
 
-        <!-- RecyclerView for New Releases -->
+        <!-- Section: Science -->
+        <TextView
+            android:text="Science"
+            style="@style/SectionTitle" />
+
+        <TextView
+            android:text="Explore the wonders of science and discovery."
+            style="@style/SectionSubtitle" />
+
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerNewReleases"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:orientation="horizontal"
-            android:overScrollMode="never"
-            tools:listitem="@layout/book_item" />
+            android:id="@+id/recyclerscience"
+            style="@style/HorizontalRecyclerStyle" />
+
+        <!-- Section: History -->
+        <TextView
+            android:text="History"
+            style="@style/SectionTitle" />
+
+        <TextView
+            android:text="Dive into historical events and civilizations."
+            style="@style/SectionSubtitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerhistory"
+            style="@style/HorizontalRecyclerStyle" />
+
+        <!-- Section: Biography -->
+        <TextView
+            android:text="Biography"
+            style="@style/SectionTitle" />
+
+        <TextView
+            android:text="Read about inspiring lives and achievements."
+            style="@style/SectionSubtitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerbiography"
+            style="@style/HorizontalRecyclerStyle" />
+
+        <!-- Section: Art -->
+        <TextView
+            android:text="Art"
+            style="@style/SectionTitle" />
+
+        <TextView
+            android:text="Aesthetic and creative expressions in visual form."
+            style="@style/SectionSubtitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerart"
+            style="@style/HorizontalRecyclerStyle" />
+
+        <!-- Section: Philosophy -->
+        <TextView
+            android:text="Philosophy"
+            style="@style/SectionTitle" />
+
+        <TextView
+            android:text="Explore thoughts, existence, and reasoning."
+            style="@style/SectionSubtitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerphilosophy"
+            style="@style/HorizontalRecyclerStyle" />
+
+        <!-- Section: Self-Help -->
+        <TextView
+            android:text="Self-Help"
+            style="@style/SectionTitle" />
+
+        <TextView
+            android:text="Grow, motivate, and empower yourself."
+            style="@style/SectionSubtitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerselfhelp"
+            style="@style/HorizontalRecyclerStyle" />
     </LinearLayout>
 </ScrollView>
