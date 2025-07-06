@@ -7,11 +7,19 @@ import com.bumptech.glide.Glide
 import com.example.readease.data.model.Books
 import com.example.readease.databinding.ItemCollectionBinding
 
-class BookCollectionAdapter(private val books: List<Books>) :
-    RecyclerView.Adapter<BookCollectionAdapter.BookViewHolder>() {
+class BookCollectionAdapter(
+    private val books: List<Books>,
+    private val onItemClick: (Books) -> Unit
+) : RecyclerView.Adapter<BookCollectionAdapter.BookViewHolder>() {
 
     inner class BookViewHolder(val binding: ItemCollectionBinding) :
-        RecyclerView.ViewHolder(binding.root)
+        RecyclerView.ViewHolder(binding.root) {
+        init {
+            binding.root.setOnClickListener {
+                onItemClick(books[adapterPosition])
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val binding = ItemCollectionBinding.inflate(LayoutInflater.from(parent.context), parent, false)

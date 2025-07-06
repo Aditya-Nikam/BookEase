@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.readease.R
 import com.example.readease.data.db.AppDatabase
 import com.example.readease.databinding.FragmentCollectionBinding
 import com.example.readease.repository.BooksRepository
@@ -40,8 +42,19 @@ class CollectionFragment : Fragment() {
 
         viewModel.books.observe(viewLifecycleOwner) { books ->
             val collectedBooks = books.filter { it.collected }
-            binding.recyclerViewCollections.adapter = BookCollectionAdapter(collectedBooks)
+            binding.recyclerViewCollections.adapter = BookCollectionAdapter(collectedBooks) { selectedBook ->
+                val bundle = Bundle().apply {
+                    putParcelable("book", selectedBook)
+                }
+
+                // Navigate to ExploreFragment
+                findNavController().navigate(R.id.exploreFragment, bundle)
+
+                // Switch bottom nav selection
+                (activity as? MainActivity)?.setSelectedBottomNavItem(R.id.exploreFragment)
+            }
         }
+
 
         viewModel.loadBooks()
     }
