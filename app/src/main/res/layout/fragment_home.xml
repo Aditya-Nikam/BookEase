@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp"
+    tools:context=".ui.view.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <!-- Recommended for you -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recommended for you"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Handpicked based on your reading preferences."
+            android:textColor="#888888"
+            android:textSize="14sp" />
+
+        <!-- RecyclerView for Recommended -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerRecommended"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            tools:listitem="@layout/book_item" />
+
+        <!-- New Releases -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Releases"
+            android:textColor="#000000"
+            android:padding="4dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Newly released books spanning various genres."
+            android:textColor="#888888"
+            android:textSize="14sp" />
+
+        <!-- RecyclerView for New Releases -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerNewReleases"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            tools:listitem="@layout/book_item" />
+    </LinearLayout>
+</ScrollView>

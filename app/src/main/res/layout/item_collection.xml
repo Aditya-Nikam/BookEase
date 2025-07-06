@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingVertical="16dp"
+    android:paddingHorizontal="12dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageBook"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        app:shapeAppearanceOverlay="@style/RoundedImageStyle" />
+
+    <ImageView
+        android:id="@+id/imageBookmark"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_bookmark" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/imageBook"
+        android:layout_alignTop="@id/imageBook"
+        android:layout_marginStart="12dp"
+        android:layout_toStartOf="@id/imageBookmark"
+        android:text="Book Title"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textTitle"
+        android:layout_alignStart="@id/textTitle"
+        android:text="Author Name"
+        android:textSize="15sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textAuthor"
+        android:layout_alignStart="@id/textAuthor"
+        android:layout_toStartOf="@id/imageBookmark"
+        android:text="Book description goes here..."
+        android:textSize="14sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="@android:color/darker_gray" />
+
+</RelativeLayout>

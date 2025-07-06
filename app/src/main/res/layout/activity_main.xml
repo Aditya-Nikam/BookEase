@@ -1,67 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="@android:color/white"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F3F3F3"> <!-- Slightly gray background for contrast -->
 
-    <!-- Header Bar -->
-    <RelativeLayout
+    <!-- Main elevated container -->
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:paddingHorizontal="16dp"
-        android:background="@android:color/white"
-        android:gravity="center_vertical">
+        android:layout_height="match_parent"
 
-        <!-- Menu Icon -->
-        <ImageView
-            android:id="@+id/menuIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_menu"
-            android:layout_centerVertical="true"
-            android:layout_alignParentStart="true"/>
+        app:cardElevation="12dp"
+        android:background="@android:color/white">
 
-        <!-- Center Title -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Read Ease"
-            android:textColor="#9A3BE8"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"/>
+        <!-- Your full layout inside -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="@android:color/white">
 
-        <!-- Notification Icon -->
-        <ImageView
-            android:id="@+id/notificationIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/ic_notify"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"/>
-    </RelativeLayout>
+            <!-- Header Bar -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingHorizontal="16dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical">
 
-    <!-- Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#DDDDDD"/>
+                <!-- Menu Icon -->
+                <ImageView
+                    android:id="@+id/menuIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_menu"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentStart="true"/>
 
-    <!-- Fragment Container -->
-    <FrameLayout
-        android:id="@+id/mainFragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+                <!-- Center Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Read Ease"
+                    android:textColor="#9A3BE8"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true"/>
 
-    <!-- Bottom Navigation -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        app:menu="@menu/bottom_nav_menu"
-        app:itemIconTint="@color/nav_selector"
-        app:itemTextColor="@color/nav_selector"/>
-</LinearLayout>
+                <!-- Notification Icon -->
+                <ImageView
+                    android:id="@+id/notificationIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_notify"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"/>
+
+            <!-- Fragment Container -->
+            <FrameLayout
+                android:id="@+id/mainFragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <!-- Divider -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD"/>
+
+            <!-- Bottom Navigation -->
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNav"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                app:menu="@menu/bottom_nav_menu"
+                app:itemIconTint="@color/nav_selector"
+                app:itemTextColor="@color/nav_selector"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

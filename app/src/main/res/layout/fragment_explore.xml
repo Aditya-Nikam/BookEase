@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Book Cover Image -->
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:id="@+id/ivCover"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/image" />
+
+        <!-- Book Title -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I want a Better Catastrophe"
+            android:textColor="#0A0A2F"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <!-- Author -->
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Andrew Boyd"
+            android:textColor="#0A0A2F"
+            android:textSize="14sp"
+            android:layout_marginTop="4dp" />
+
+        <!-- Summary -->
+        <TextView
+            android:id="@+id/tvSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The story follows a woman named Nora Seed"
+            android:textColor="#8A8A8A"
+            android:textSize="14sp"
+            android:layout_marginTop="2dp" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#DDDDDD" />
+
+        <!-- Overview Heading -->
+        <TextView
+            android:id="@+id/tvOverviewLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Overview"
+            android:textColor="#0A0A2F"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
+
+        <!-- Overview Description -->
+        <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#4C4C4C"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="6dp"
+            android:text="Full description of the book goes here..." />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.example.readease.ui.view.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.readease.R
 import com.example.readease.databinding.FragmentLoginBinding
+import com.example.readease.ui.view.MainActivity
 
 class LoginFragment : Fragment() {
 
@@ -34,6 +36,9 @@ class LoginFragment : Fragment() {
                 Toast.makeText(requireContext(), "Please fill all fields", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(requireContext(), "Login successful", Toast.LENGTH_SHORT).show()
+                val intent = Intent(requireContext(), MainActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
             }
         }
 
