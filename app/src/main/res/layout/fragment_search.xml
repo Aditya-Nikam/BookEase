@@ -32,8 +32,8 @@
             android:id="@+id/ivSearch"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/ic_search"
-            android:tint="#3E295F"/>
+            android:src="@drawable/ic_explore"
+            app:tint="#3E295F" />
     </LinearLayout>
 
     <!-- Search History List -->
